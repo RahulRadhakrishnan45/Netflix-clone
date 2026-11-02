@@ -32,6 +32,11 @@
     cursor: pointer;
 }
 
+.navbar-left ul li a {
+    text-decoration: none;
+    color: #e5e5e5;
+}
+
 .navbar-right{
     display: flex;
     gap: 20px;

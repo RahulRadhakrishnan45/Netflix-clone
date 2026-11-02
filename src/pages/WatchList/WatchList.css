@@ -1,0 +1,142 @@
+.watchlist {
+    min-height: 100vh;
+    background: #141414;
+    color: #fff;
+    padding: 100px 6% 60px;
+  }
+  
+  .watchlist h1 {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+  
+  .watchlist-grid {
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(180px, 1fr)
+    ); 
+    gap: 25px;
+  }
+
+  .watchlist-card {
+    text-decoration: none;
+    color: #fff;
+    background: #1f1f1f;
+    border-radius: 6px;
+    overflow: hidden;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+  
+  .watchlist-card:hover {
+    transform: scale(1.05);
+    box-shadow:
+      0 10px 30px rgba(0, 0, 0, 0.6);
+  }
+  
+  .watchlist-card img {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .watchlist-card-info {
+    padding: 12px;
+  }
+  
+  .watchlist-card-info h3 {
+    font-size: 15px;
+    margin: 0 0 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .watchlist-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #aaa;
+    font-size: 13px;
+  }
+  
+  .watchlist-meta span:first-child {
+    color: #ddd;
+  }
+  
+  .empty-watchlist {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .empty-watchlist h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  
+  .empty-watchlist p {
+    color: #aaa;
+    margin-bottom: 25px;
+  }
+  
+  .empty-watchlist button {
+    border: none;
+    background: #fff;
+    color: #000;
+    padding: 12px 22px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  .empty-watchlist button:hover {
+    background: #ddd;
+  }
+  
+  @media (max-width: 700px) {
+    .watchlist {
+      padding: 90px 4% 40px;
+    }
+  
+    .watchlist h1 {
+      font-size: 26px;
+    }
+  
+    .watchlist-grid {
+      grid-template-columns:
+        repeat(3, 1fr);
+  
+      gap: 12px;
+    }
+  
+    .watchlist-card-info {
+      padding: 8px;
+    }
+  
+    .watchlist-card-info h3 {
+      font-size: 13px;
+    }
+  
+    .watchlist-meta {
+      font-size: 11px;
+    }
+  }
+  
+  
+  @media (max-width: 450px) {
+  
+    .watchlist-grid {
+      grid-template-columns:
+        repeat(2, 1fr);
+  
+      gap: 12px;
+    }
+  }

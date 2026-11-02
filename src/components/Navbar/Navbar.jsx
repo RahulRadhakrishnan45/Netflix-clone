@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import "./Navbar.css";
 import logo from "../../assets/logo.png";
 import search_icon from "../../assets/search_icon.svg";
@@ -7,9 +7,11 @@ import profile_img from "../../assets/profile_img.png";
 import caret_icon from "../../assets/caret_icon.svg";
 import { useEffect, useRef } from "react";
 import { logout } from "../Firebase";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const navRef = useRef();
+  const [openMenu, setOpenMenu] = useState(false);
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -20,6 +22,11 @@ const Navbar = () => {
       }
     });
   }, []);
+
+  const handleMenuItemClick = () => {
+    setOpenMenu(false);
+  }
+  
   return (
     <div ref={navRef} className="navbar">
       <div className="navbar-left">
@@ -29,7 +36,11 @@ const Navbar = () => {
           <li>TV Shows</li>
           <li>Movies</li>
           <li>New & Popular</li>
-          <li>My List</li>
+          <li>
+            <Link to="/watchlist" onClick={handleMenuItemClick}>
+              My List
+            </Link>
+          </li>
           <li>Browse by Languages</li>
         </ul>
       </div>

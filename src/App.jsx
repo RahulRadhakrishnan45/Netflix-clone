@@ -6,6 +6,8 @@ import Player from './pages/Player/Player'
 import { onAuthStateChanged } from 'firebase/auth'
 import { auth } from './components/Firebase'
 import { ToastContainer, toast } from 'react-toastify';
+import MovieDetail from './pages/MovieDetail/MovieDetail'
+import WatchList from './pages/WatchList/WatchList'
 
 const App = () => {
 
@@ -28,6 +30,8 @@ const App = () => {
         <Route path='/' element={<Home/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/player/:id' element={<Player/>}/>
+        <Route path="/movie/:id" element={<MovieDetail />}/>
+        <Route path="/watchlist" element={<WatchList />}/>
       </Routes>
       
     </div>
